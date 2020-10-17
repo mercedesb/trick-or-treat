@@ -10,11 +10,10 @@ const App = () => (
       <h1>Trick or treat it forward</h1>
       <h2>Neighbors helping neighbors</h2>
       <p>
-        Instead of passing out treats this year, we're making a $5 donation to{" "}
-        <a href="https://www.albanyparkmutualaid.com/">
-          Albany Park Mutual Aid
-        </a>{" "}
-        (up to $200)
+        Instead of passing out treats this year, we're making a $
+        {process.env.DONATION_PER_PERSON} donation to{" "}
+        <a href={process.env.DONATING_TO_WEBSITE}>{process.env.DONATING_TO}</a>{" "}
+        (up to ${process.env.DONATION_MAX})
       </p>
     </div>
     <Home path="/" />
