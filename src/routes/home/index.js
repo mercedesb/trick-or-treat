@@ -47,9 +47,7 @@ const Home = () => {
             )}
           </p>
         </div>
-        <div className="ghostContainer">
-          <Ghost />
-        </div>
+        <Ghost />
       </>
     );
   }

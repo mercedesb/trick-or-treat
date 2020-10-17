@@ -118,12 +118,20 @@ input[type="text"] {
   width: 100%;
 }
 
-.ghostContainer {
-  position: relative;
-  height: 200px;
+footer {
+  text-align: right;
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
 }
 
 /* GHOST */
+.ghostContainer {
+  position: relative;
+  height: 200px;
+  min-height: 200px;
+}
+
 .container {
   position: absolute;
   left: 50%;

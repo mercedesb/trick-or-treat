@@ -16,6 +16,12 @@ const App = () => (
       </p>
     </div>
     <Home path="/" />
+    <footer>
+      <small>
+        Built with ♡ |{" "}
+        <a href="https://github.com/mercedesb/trick-or-treat">Github</a>
+      </small>
+    </footer>
   </div>
 );
 
