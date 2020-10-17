@@ -1,7 +1,7 @@
 import { h } from "preact";
 import { v4 as uuid } from "uuid";
 
-async function fetchData(path, method, data) {
+async function fetchData(path, method = "GET", data = null) {
   const response = await fetch(path, {
     method: method,
     body: !!data ? JSON.stringify(data) : null,
@@ -18,6 +18,14 @@ async function fetchData(path, method, data) {
 }
 
 export default () => ({
+  getCount: async () => {
+    let data = await fetchData(
+      encodeURI(
+        `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_NAME}?fields[]=id`
+      )
+    );
+    return data.records.length;
+  },
   create: (data) => {
     const id = uuid();
 
