@@ -5,15 +5,19 @@ import indefiniteArticle from "indefinite";
 import style from "./style.css";
 import TextInput from "../../components/textInput";
 import useAirtable from "../../hooks/useAirtable";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Home = () => {
+  const storageKey = "APTrickOrTreat";
   const { create } = useAirtable();
-  const [submitted, setSubmitted] = useState(false);
+  const { get, set } = useLocalStorage();
+  const [submitted, setSubmitted] = useState(get(storageKey));
   const [costume, setCostume] = useState("");
 
   const handleSubmit = () => {
     create({ costume });
     setSubmitted(true);
+    set(storageKey, true);
   };
 
   if (!submitted) {
@@ -29,6 +33,13 @@ const Home = () => {
           />
           <button type="submit">Trick or Treat!</button>
         </form>
+      </div>
+    );
+  } else if (!costume) {
+    return (
+      <div>
+        <p>Looks like you've already stopped by 🧟‍♀️🧛‍♂️🦸‍♀️</p>
+        <p>Thanks for your trick-or-treat it forward donation!</p>
       </div>
     );
   } else {
