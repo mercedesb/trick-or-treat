@@ -6,7 +6,8 @@ import ordinal from "ordinal";
 
 import useAirtable from "../../hooks/useAirtable";
 import useLocalStorage from "../../hooks/useLocalStorage";
-import CostumeForm from "./costumeForm";
+import CostumeForm from "../../components/costumeForm";
+import Ghost from "../../components/ghost";
 
 const Home = () => {
   const storageKey = "APTrickOrTreat";
@@ -37,16 +38,23 @@ const Home = () => {
     );
   } else {
     return (
-      <div>
-        <p>Ohhhh {indefiniteArticle(costume)}!? Super cool!</p>
-        <p>Thanks for your trick-or-treat it forward donation!</p>
-        {!!count && (
+      <>
+        <div>
+          <p>Ohhhh {indefiniteArticle(costume)}!? Super cool!</p>
           <p>
-            You're the {ordinal(count)} donation. We've raised{" "}
-            {count > 40 ? "$200" : `$${count * 5}`}.
+            Thank you
+            {!!count && (
+              <>
+                , you're the {ordinal(count)} donation. We've raised{" "}
+                {count > 40 ? "$200" : `$${count * 5}`}!
+              </>
+            )}
           </p>
-        )}
-      </div>
+        </div>
+        <div className="ghostContainer">
+          <Ghost />
+        </div>
+      </>
     );
   }
 };

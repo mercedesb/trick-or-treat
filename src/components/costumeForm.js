@@ -1,6 +1,6 @@
 import { h } from "preact";
 
-import TextInput from "../../components/textInput";
+import TextInput from "./textInput";
 
 const CostumeForm = ({ handleSubmit, costume, setCostume }) => {
   return (
