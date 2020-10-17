@@ -1,5 +1,7 @@
 import { h } from "preact";
 import { useState } from "preact/hooks";
+
+import indefiniteArticle from "indefinite";
 import style from "./style.css";
 import TextInput from "../../components/textInput";
 import useAirtable from "../../hooks/useAirtable";
@@ -32,7 +34,7 @@ const Home = () => {
   } else {
     return (
       <div>
-        <p>Ohhhh a {costume}!? Super cool!</p>
+        <p>Ohhhh {indefiniteArticle(costume)}!? Super cool!</p>
         <p>Thanks for your trick-or-treat it forward donation!</p>
       </div>
     );

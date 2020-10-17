@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "dotenv-safe": "^8.2.0",
+    "indefinite": "^2.4.1",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
