@@ -2,7 +2,6 @@ import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 
 import indefiniteArticle from "indefinite";
-import ordinal from "ordinal";
 
 import useAirtable from "../../hooks/useAirtable";
 import useLocalStorage from "../../hooks/useLocalStorage";
@@ -42,12 +41,9 @@ const Home = () => {
         <div>
           <p>Ohhhh {indefiniteArticle(costume)}!? Super cool!</p>
           <p>
-            Thank you
+            Thank you!{" "}
             {!!count && (
-              <>
-                , you're the {ordinal(count)} donation. We've raised{" "}
-                {count > 40 ? "$200" : `$${count * 5}`}!
-              </>
+              <>We've raised {count > 40 ? "$200" : `$${count * 5}`}!</>
             )}
           </p>
         </div>
