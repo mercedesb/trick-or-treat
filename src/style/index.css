@@ -140,6 +140,7 @@ footer {
 .shadowFrame {
   width: 130px;
   margin-top: 15px;
+  margin-left: -10px;
 }
 
 .shadow {
