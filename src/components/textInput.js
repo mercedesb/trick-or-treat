@@ -1,3 +1,5 @@
+import { h } from "preact";
+
 const TextInput = ({ label, name, value, onInput, required }) => {
   return (
     <label>
