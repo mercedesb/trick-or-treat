@@ -11,13 +11,10 @@ body {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  align-items: center;
   color: #dfddc7;
-  display: flex;
   font-size: 16px;
   font-weight: 400;
-  justify-content: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 1rem;
   text-align: center;
   width: 70%;
   margin: 0 auto;
@@ -69,10 +66,10 @@ p {
 }
 
 #app {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  min-height: calc(100vh - 3rem);
 }
 
 a {
@@ -120,23 +117,14 @@ input[type="text"] {
 
 footer {
   text-align: right;
-  position: absolute;
-  right: 2rem;
-  bottom: 1rem;
 }
 
 /* GHOST */
-.ghostContainer {
-  position: relative;
-  height: 200px;
-  min-height: 200px;
-}
 
 .container {
-  position: absolute;
-  left: 50%;
-  margin-left: -64.5px;
-  /* margin-top: -85.5px; */
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .ghost {
