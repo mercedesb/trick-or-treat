@@ -1,7 +1,7 @@
 import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 
-import indefiniteArticle from "indefinite";
+import indefiniteArticle from "../../helpers/indefiniteWrapper";
 
 import useAirtable from "../../hooks/useAirtable";
 import useLocalStorage from "../../hooks/useLocalStorage";

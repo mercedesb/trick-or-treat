@@ -1,14 +1,24 @@
 export default () => ({
   get: (key) => {
-    return JSON.parse(localStorage.getItem(key));
+    if (typeof window === "undefined") {
+      return {};
+    } else {
+      return JSON.parse(localStorage.getItem(key));
+    }
   },
   set: (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
+    if (typeof window !== "undefined") {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
   },
   remove: (key) => {
-    localStorage.removeItem(key);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem(key);
+    }
   },
   clear: () => {
-    localStorage.clear();
+    if (typeof window !== "undefined") {
+      localStorage.clear();
+    }
   },
 });
