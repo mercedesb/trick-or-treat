@@ -39,7 +39,7 @@ const Home = () => {
     return (
       <>
         <div>
-          <p>Ohhhh {indefiniteArticle(costume)}!? Super cool!</p>
+          {!!costume && <p>Ohhhh {indefiniteArticle(costume)}!? Super cool!</p>}
           <p>
             Thank you!{" "}
             {!!count && (

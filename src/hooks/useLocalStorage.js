@@ -1,7 +1,7 @@
 export default () => ({
   get: (key) => {
     if (typeof window === "undefined") {
-      return {};
+      return null;
     } else {
       return JSON.parse(localStorage.getItem(key));
     }
